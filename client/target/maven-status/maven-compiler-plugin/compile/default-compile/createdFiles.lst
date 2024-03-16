@@ -10,5 +10,6 @@ il\cshaifasweng\OCSFMediatorExample\client\Managercontrol.class
 il\cshaifasweng\OCSFMediatorExample\client\VolunterControl.class
 il\cshaifasweng\OCSFMediatorExample\client\Main.class
 il\cshaifasweng\OCSFMediatorExample\client\ocsf\AdaptableClient.class
+il\cshaifasweng\OCSFMediatorExample\client\displayTaskController.class
 il\cshaifasweng\OCSFMediatorExample\client\stringSubscriber.class
 il\cshaifasweng\OCSFMediatorExample\client\SecondaryController.class
