@@ -6,9 +6,13 @@ import il.cshaifasweng.OCSFMediatorExample.entities.UserControl;
 import il.cshaifasweng.OCSFMediatorExample.server.ocsf.AbstractServer;
 import il.cshaifasweng.OCSFMediatorExample.server.ocsf.ConnectionToClient;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.*;
 
 import org.hibernate.HibernateException;
@@ -26,14 +30,7 @@ import javax.persistence.criteria.Root;
 
 public class SimpleServer extends AbstractServer {
 	private long key;
-	public long getKey() {
-		return key;
-	}
 
-	// Setter method for key
-	public void setKey(long key) {
-		this.key = key;
-	}
 //	private static Session session;
 //	private static SessionFactory sessionFactory = getSessionFactory();
 
@@ -64,19 +61,27 @@ public class SimpleServer extends AbstractServer {
 	@Override
 	protected void handleMessageFromClient(Object msg, ConnectionToClient client)  {
 		try {
+
 			String message = (String) msg;
 			if (message.equals("get tasks")) {
 
-				if(getKey()!=-1) {
+
+
 					List<Task> alltasks = ConnectToDataBase.getAllTasks();
-					alltasks.removeIf(task -> task.getUser().getkeyId().equals(key));
 					client.sendToClient(alltasks);
 
 
-				}
 
 				System.out.println("suck");
 
+			}
+			else if(message.startsWith("*")){
+				Task task=new Task();
+				task.setDate(LocalDate.now());
+				task.setTime(LocalTime.now());
+				task.setServiceType(message);
+				task.setStatus(3);
+				ConnectToDataBase.addTask(task);
 			}
 			else if(message.startsWith("modify")){
 				String taskid= message.split(" ")[1];
@@ -111,7 +116,7 @@ public class SimpleServer extends AbstractServer {
 				List<UserControl> userControls = new ArrayList<>();
 				List<User> allUsers = ConnectToDataBase.getAllUsers();
 				for (User user : allUsers) {
-					UserControl userControl = new UserControl(user.getID(), user.getFirstName(), user.getLasttName(), user.getisConnected(), user.getCommentary(), user.getUsername(), "0", user.getAddress(), user.getEmail(), user.getRole());
+					UserControl userControl = new UserControl(user.getID(), user.getFirstName(), user.getLastName(), user.getisConnected(), user.getCommentary(), user.getUsername(), "0", user.getAddress(), user.getEmail(), user.getRole());
 					userControl.setSalt(user.getSalt());
 					userControl.setPasswordHash(user.getPasswordHash());
 					userControls.add(userControl);
@@ -121,16 +126,31 @@ public class SimpleServer extends AbstractServer {
 				for (UserControl user : userControls) {
 					isValidLogin = user.login(username, password);
 					if (isValidLogin) {
+
+
+						ByteArrayOutputStream bos = new ByteArrayOutputStream();
+						try (ObjectOutputStream out = new ObjectOutputStream(bos)) {
+							out.writeObject(user);  // assuming 'user' is your User object
+							out.flush();
+						} catch (IOException e) {
+							// Handle serialization exception
+							e.printStackTrace();
+						}
+
+						byte[] userBytes = bos.toByteArray();
+						client.sendToClient(userBytes);
+
+
 						// Send a success response back to the client
 						try {
 							if(username.startsWith("*"))
 							{
 								client.sendToClient("Manager_LOGIN_SUCCESS");
-								setKey(user.getkeyId());
+
 
 							}
 							client.sendToClient("LOGIN_SUCCESS");
-							setKey(user.getkeyId());
+
 						} catch (IOException e) {
 							e.printStackTrace();
 						}

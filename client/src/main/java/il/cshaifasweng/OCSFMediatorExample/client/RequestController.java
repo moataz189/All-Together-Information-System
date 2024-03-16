@@ -109,12 +109,13 @@ public class RequestController {
             return;
         }*/
         App.displayTaskDetails(task);
-        try {
-            SimpleClient.getClient().sendToServer(task);
-        } catch (IOException e) {
-
-            e.printStackTrace();
-        }
+//        try {
+//            SimpleClient.getClient().sendToServer(task);
+//        } catch (IOException e) {
+//
+//            e.printStackTrace();
+//        }
+        SimpleClient.getClient().sendToServer("*"+services.getValue());
         App.setRoot("secondary");
     }
 }

@@ -58,8 +58,10 @@ public class SecondaryController {
     }
     @FXML
     void Requesthelp(ActionEvent event) throws IOException {
-        App.setRoot("request_control");
         SimpleClient.getClient().sendToServer("Create task");
+        App.setRoot("request_control");
+
+
     }
 
     @FXML

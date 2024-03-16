@@ -110,6 +110,24 @@ public class ConnectToDataBase {
         System.out.print("Data Creation Finish");
 
     }
+    static void addTask(Task task) throws Exception {
+        try {
+            // session.beginTransaction(); // Begin transaction
+            if (task.getUser() != null){
+                session.save(task.getUser());
+            }
+            session.save(task);
+            // session.getTransaction().commit(); // Commit transaction after saving
+            session.flush();
+            System.out.println("Task added successfully to the database.");
+        } catch (Exception e) {
+            if (session.getTransaction() != null && session.getTransaction().isActive()) {
+                session.getTransaction().rollback(); // Rollback transaction if an exception occurs
+            }
+            System.err.println("Failed to add task to the database.");
+            e.printStackTrace();
+        }
+    }
     public static void initializeDatabase() throws IOException
     {
         try {
@@ -132,4 +150,5 @@ public class ConnectToDataBase {
         session.getTransaction().commit(); // Save everything.
         session.close();
     }
+
 }

@@ -9,9 +9,7 @@ import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.prefs.Preferences;
 
 public class VolunterControl {
@@ -38,13 +36,17 @@ public class VolunterControl {
             }
         }
         for(Task task : tasks){
-            this.TasksList.getItems().addAll(task.getServiceType());
+            this.TasksList.getItems().addAll(String.valueOf(task.getIdNum())+" " +task.getServiceType());
         }
         this.TasksList.setOnMouseClicked(event -> {
             String selectedTaskName = this.TasksList.getSelectionModel().getSelectedItem();
+
+
             if(selectedTaskName!=null){
+                String[] parts = selectedTaskName.split("\\s+", 2);
+                String firstPart = parts[0];
                 for(Task task : tasks){
-                    if(task.getServiceType().equals(selectedTaskName)){
+                    if(String.valueOf(task.getIdNum()).equals(firstPart)){
                         selectedTask = task;
                         break;
                     }
@@ -52,6 +54,7 @@ public class VolunterControl {
             }
         });
     }
+
     private void showAlert(String task){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Task details");

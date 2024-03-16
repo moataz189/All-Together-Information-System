@@ -42,7 +42,7 @@ public class displayTaskController {
         service.setText(task.getServiceType());
         //email.setText(task.getUser().getEmail());
         User user = UserControl.getLoggedInUser();
-       // submmiter.setText(user.getFirstName()+ " "+user.getLastName());
+        submmiter.setText(user.getFirstName()+ " "+user.getLastName());
         note.setText(task.getNote());
     }
 }

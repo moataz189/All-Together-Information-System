@@ -1,20 +1,24 @@
 package il.cshaifasweng.OCSFMediatorExample.client;
 
 import il.cshaifasweng.OCSFMediatorExample.entities.Task;
+import il.cshaifasweng.OCSFMediatorExample.entities.User;
+import il.cshaifasweng.OCSFMediatorExample.entities.UserControl;
 import javafx.scene.control.Alert;
 import org.greenrobot.eventbus.EventBus;
 
 import il.cshaifasweng.OCSFMediatorExample.client.ocsf.AbstractClient;
 import il.cshaifasweng.OCSFMediatorExample.entities.Warning;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.List;
 
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 
 public class SimpleClient extends AbstractClient {
-	
+
 	private static SimpleClient client = null;
 
 	private SimpleClient(String host, int port) {
@@ -61,13 +65,28 @@ public class SimpleClient extends AbstractClient {
 		}
 		if (msg instanceof List)
 		{
-			System.out.println("x");
+
 			VolunterControl.tasks = (List<Task>) msg;
-			System.out.println("x");
+
 			App.setRoot("volunter_control");
 		}
+		if (msg instanceof byte[]) {
+			byte[] receivedUserBytes = (byte[]) msg;
+
+			try (ByteArrayInputStream bis = new ByteArrayInputStream(receivedUserBytes);
+				 ObjectInputStream in = new ObjectInputStream(bis)) {
+
+				// Deserialize the User object received from the server
+				User user = (User) in.readObject();
+				UserControl.setLoggedInUser(user);
+			} catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
 	}
-	
+
 	public static SimpleClient getClient() {
 		if (client == null) {
 			client = new SimpleClient("localhost", 3000);
