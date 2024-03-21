@@ -60,6 +60,29 @@ public class SimpleClient extends AbstractClient {
         if (msg instanceof String) {
             String message = (String) msg;
             // Handling LOGIN_FAIL message
+            if("The key id is true".equals(message))
+            {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION); // Use ERROR alert type
+                    alert.setTitle("Request transferred"); // Set the window's title
+                    alert.setHeaderText(null); // Optional: you can have a header or set it to null
+                    alert.setContentText("your Request has been transferred to the required service center"); // Set the main message/content
+                    alert.showAndWait(); // Display the alert and wait for the user to close it
+                });
+
+
+//                distressCallControl instance = new distressCallControl(); // You need to have a way to get the actual instance of distressCallControl
+//                instance.enablePoliceButton(true);
+            }
+            if("The key id is false".equals(message)) {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.ERROR); // Use ERROR alert type
+                    alert.setTitle("Request Error"); // Set the window's title
+                    alert.setHeaderText(null); // Optional: you can have a header or set it to null
+                    alert.setContentText("Pleas enter your correct code"); // Set the main message/content
+                    alert.showAndWait(); // Display the alert and wait for the user to close it
+                });
+            }
             if ("LOGIN_FAIL".equals(message)) {
                 System.out.println("Login failed. Please try again.");
 
@@ -74,7 +97,7 @@ public class SimpleClient extends AbstractClient {
             } else {
                 if ("LOGIN_SUCCESS".equals(message)) {
                     App.setRoot("secondary");
-                } else {
+                } else if("Manager_LOGIN_SUCCESS".equals(message)) {
                     App.setRoot("manager_control");
                 }
 

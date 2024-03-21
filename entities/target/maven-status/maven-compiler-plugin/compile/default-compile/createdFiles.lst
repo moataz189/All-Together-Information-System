@@ -1,5 +1,7 @@
-il\cshaifasweng\OCSFMediatorExample\entities\Task.class
+il\cshaifasweng\OCSFMediatorExample\entities\Manager.class
 il\cshaifasweng\OCSFMediatorExample\entities\UserControl.class
 il\cshaifasweng\OCSFMediatorExample\entities\User$Role.class
-il\cshaifasweng\OCSFMediatorExample\entities\Warning.class
 il\cshaifasweng\OCSFMediatorExample\entities\User.class
+il\cshaifasweng\OCSFMediatorExample\entities\Task.class
+il\cshaifasweng\OCSFMediatorExample\entities\Message.class
+il\cshaifasweng\OCSFMediatorExample\entities\Warning.class

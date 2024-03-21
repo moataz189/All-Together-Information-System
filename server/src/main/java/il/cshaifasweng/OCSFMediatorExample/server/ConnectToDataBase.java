@@ -128,7 +128,7 @@ public class ConnectToDataBase {
     public static void CreateData() throws Exception {
         System.out.print("Data Creation Start");
         User user1 = new User("212930697", "Qamar", "Hammod", false, "Community 1", "*1", "2", "Kabul", "qammar@gmail.com", User.Role.Manager);
-        User user7 = new User("212930697", "Moataz", "Odeh", false, "Community 1", "MoatazOD", "MoatazO123", "Yaffa Nazareth", "Moataz.ody44@gmail.com", User.Role.USER);
+        User user7 = new User("212930697", "Moataz", "Odeh", false, "Community 1", "4", "4", "Yaffa Nazareth", "Moataz.ody44@gmail.com", User.Role.USER);
         User user8 = new User("212121236", "Aya", "Hammod", false, "Community 7", "2", "2", "Yaffa Nazareth", "ayaaa44@gmail.com", User.Role.USER);
         User user2 = new User("213011398", "Adan", "Hammoud", false, "Community 2", "AdanHa", "Adan123", " Kabul ", "Adanhammod@gmail.com", User.Role.USER);
         User user3 = new User("213298664", "Adan", "Sulaimani", false, "Community 3", "AdanSul", "AdanS123", "Nazareth", "Adaslemany@gmail.com", User.Role.USER);

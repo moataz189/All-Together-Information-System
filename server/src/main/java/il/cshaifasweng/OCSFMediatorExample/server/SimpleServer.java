@@ -63,17 +63,17 @@ public class SimpleServer extends AbstractServer {
 
     protected void handleMessageFromClient(Object msg, ConnectionToClient client) {
         try {
-        /*    if (msg instanceof Object[]) {
+            if (msg instanceof Object[]) {
                 System.out.println("**??");
                 Object[] messageParts = (Object[]) msg;
                 if (messageParts.length == 2 && messageParts[0] instanceof String && messageParts[1] instanceof Task) {
                     if (messageParts[0].equals("add task to database."))
-                        ((Task) messageParts[1]).setUser(UserControl.getLoggedInUser());
+                        //((Task) messageParts[1]).setUser(UserControl.getLoggedInUser());
                         ConnectToDataBase.addTask((Task) messageParts[1]);
                 }
                 return;
-            }*/
-         /* if (msg instanceof Task) {
+            }
+         if (msg instanceof Task) {
                 try {
                    ((Task) msg).setUser(UserControl.getLoggedInUser());
                     ConnectToDataBase.addTask((Task) msg);
@@ -81,8 +81,44 @@ public class SimpleServer extends AbstractServer {
                     throw new RuntimeException(e);
                 }
                 return;
-            }*/
+            }
             String message = (String) msg;
+            if(message.startsWith("The key"))
+            {
+                String[] parts = message.split(":", 2);
+                if (parts.length < 2) {
+
+                }
+                String keyStr = parts[1].trim();
+
+                if (keyStr.isEmpty()) {
+                    System.out.println("There is no key id provided.");
+                } else {
+                    // Attempt to convert the trimmed string to an int
+                    try {
+                        int keyId = Integer.parseInt(keyStr);
+                        System.out.println("The key id is a number: " + keyId);
+                        List<User> allUsers = ConnectToDataBase.getAllUsers();
+                        boolean x=false;
+                        for(User user : allUsers )
+                        {
+                            if (user.getkeyId()==keyId)
+                            {
+                                client.sendToClient("The key id is true");
+                                x=true;
+                            }
+                        }
+                       if(x==false)
+                       {
+                           client.sendToClient("The key id is false");
+                       }
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("The provided key id is not a valid number.");
+                    }
+                }
+
+            }
             if (message.equals("get tasks")) {
                 List<Task> alltasks = ConnectToDataBase.getAllTasks();
                 Object[] array = new Object[2];
@@ -138,6 +174,8 @@ public class SimpleServer extends AbstractServer {
                     userControl.setPasswordHash(user.getPasswordHash());
                     userControls.add(userControl);
                 }
+                System.out.println(username);
+                System.out.println(password);
 
                 boolean isValidLogin = false;
                 for (UserControl user : userControls) {

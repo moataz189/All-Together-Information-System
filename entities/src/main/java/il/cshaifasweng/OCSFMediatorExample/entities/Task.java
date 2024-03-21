@@ -34,9 +34,9 @@ public class Task implements Serializable {
     @Column(name = "executionTime")
      float executionTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-     User user;
+    User user;
 //    @ManyToOne(fetch = FetchType.LAZY) // Assuming you want to use lazy loading
 //     UploadedTaskList uploadedTaskList;
 
@@ -65,6 +65,7 @@ public class Task implements Serializable {
     }
 
     public Task(LocalDate date, LocalTime time, int status, String serviceType, String note, float executionTime) {
+        System.out.println("a");
         this.date = date;
         this.time = time;
         this.status = status;

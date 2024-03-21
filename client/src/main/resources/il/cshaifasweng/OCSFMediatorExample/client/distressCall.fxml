@@ -2,24 +2,30 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.DistressCall">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.distressCallControl">
    <children>
-      <Button layoutX="57.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Ambulance Alert" />
-      <Button layoutX="225.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Police Alret" />
-      <Button layoutX="399.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Fire Alret" />
-      <Label layoutX="173.0" layoutY="32.0" prefHeight="52.0" prefWidth="264.0" text="           Emergency Call" textAlignment="CENTER">
+      <Button fx:id="Ambulancebtn" layoutX="57.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Ambulance Alert" />
+      <Button fx:id="policebtn" layoutX="225.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Police Alret" />
+      <Button fx:id="FireBtn" layoutX="399.0" layoutY="221.0" mnemonicParsing="false" onAction="#saveCall" prefWidth="150.0" text="Fire Alret" />
+      <Label disable="true" layoutX="173.0" layoutY="32.0" prefHeight="52.0" prefWidth="264.0" text="           Emergency Call" textAlignment="CENTER">
          <font>
             <Font name="David Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="84.0" prefHeight="42.0" prefWidth="478.0" text="Please select a center for immediate assistance." textFill="#ff0202">
+      <Label layoutX="61.0" layoutY="157.0" prefHeight="42.0" prefWidth="478.0" text="Please select a center for immediate assistance." textFill="#ff0202">
          <font>
             <Font name="David Bold" size="16.0" />
          </font>
       </Label>
+      <Label layoutX="64.0" layoutY="96.0" prefHeight="42.0" prefWidth="198.0" text="Write your Code to Contiue:" textFill="#ff0202">
+         <font>
+            <Font name="David" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codetx" layoutX="260.0" layoutY="104.0" onAction="#codetxt" prefHeight="26.0" prefWidth="80.0" promptText="codetxt" />
    </children>
 </AnchorPane>

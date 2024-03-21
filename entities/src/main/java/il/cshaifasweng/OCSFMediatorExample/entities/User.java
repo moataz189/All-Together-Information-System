@@ -57,7 +57,7 @@ public class User implements Serializable {
      Role role;
      String password;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-     Set<Task> tasks=new HashSet<>();
+    Set<Task> tasks=new HashSet<>();
 
     // Constructor, getters, and setters...
 

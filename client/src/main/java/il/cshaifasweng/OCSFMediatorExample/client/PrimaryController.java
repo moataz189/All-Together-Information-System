@@ -110,6 +110,12 @@ public class PrimaryController implements Initializable {
     }
 
     @FXML
+    void distressrequest(ActionEvent event) throws IOException {
+        App.setRoot("distressCall");
+
+    }
+
+    @FXML
     void Log_In(ActionEvent event) throws IOException {
         String username = txt_usrn.getText();
         String password = Password_button.getText();
