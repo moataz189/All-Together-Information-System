@@ -35,6 +35,7 @@ public class SimpleClient extends AbstractClient {
                     if (messageParts[0].equals("request")) {
                         System.out.println("adhhhh");
                         CheckRequestService.requests = (List<Task>) messageParts[1];
+
                         try {
                             App.setRoot("checkRequestService");
                         } catch (IOException e) {

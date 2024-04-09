@@ -5,36 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="196ef901-2346-44b5-9c47-794d17627dfd" name="Changes" comment="prototype">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/il/cshaifasweng/OCSFMediatorExample/client/SimpleClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/il/cshaifasweng/OCSFMediatorExample/client/SimpleClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/resources/il/cshaifasweng/OCSFMediatorExample/client/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/resources/il/cshaifasweng/OCSFMediatorExample/client/secondary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/classes/il/cshaifasweng/OCSFMediatorExample/client/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/il/cshaifasweng/OCSFMediatorExample/client/secondary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/client-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/classes/il/cshaifasweng/OCSFMediatorExample/client/SimpleClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/classes/il/cshaifasweng/OCSFMediatorExample/client/SimpleClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/original-client-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/UserControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/UserControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/classes/il/cshaifasweng/OCSFMediatorExample/entities/User$Role.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/classes/il/cshaifasweng/OCSFMediatorExample/entities/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/classes/il/cshaifasweng/OCSFMediatorExample/entities/UserControl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/classes/il/cshaifasweng/OCSFMediatorExample/entities/Warning.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/entities-0.0.1-SNAPSHOT.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entities/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/entities/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/entities/src/main/java/il/cshaifasweng/OCSFMediatorExample/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ConnectToDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ConnectToDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/SimpleServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/SimpleServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ocsf/AbstractServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ocsf/AbstractServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ocsf/ConnectionToClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/il/cshaifasweng/OCSFMediatorExample/server/ocsf/ConnectionToClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/hibernate.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/hibernate.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/SimpleServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/SimpleServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/ocsf/AbstractServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/ocsf/AbstractServer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/ocsf/ConnectionToClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/il/cshaifasweng/OCSFMediatorExample/server/ocsf/ConnectionToClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -59,12 +41,6 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PUSH_TAGS">
-      <GitPushTagMode>
-        <option name="argument" value="--tags" />
-        <option name="title" value="All" />
-      </GitPushTagMode>
-    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
@@ -72,14 +48,8 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JpbToolWindowState">
-    <option name="isToolWindowVisible" value="false" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -90,44 +60,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.App.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.il.cshaifasweng.OCSFMediatorExample.server.App.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OCSFMediatorExample [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OCSFMediatorExample [org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.OCSFMediatorExample [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.client.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.parent.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.server.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;adan&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/IMOE001/Documents/software/p2-g5/client/src/main/java/il/cshaifasweng/OCSFMediatorExample/client&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/IMOE001/Documents/software/hello_jfx&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.il.cshaifasweng.OCSFMediatorExample.server.App.executor": "Run",
+    "Maven.client.executor": "Run",
+    "Maven.parent.executor": "Run",
+    "Maven.server.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ASUS/IdeaProjects/p2-g5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="il.cshaifasweng.OCSFMediatorExample.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.parent">
+  <component name="RunManager" selected="Maven.client">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="il.cshaifasweng.OCSFMediatorExample.client.App" />
       <module name="client" />
@@ -279,7 +244,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-openjdk-21.0.1-4caba194b151-23eed401" />
+        <option value="jdk-17.0.9-corretto-17.0.9-f644763e9732-ebaef533" />
       </set>
     </attachedChunks>
   </component>
@@ -294,32 +259,9 @@
       <workItem from="1708012065687" duration="22896000" />
       <workItem from="1708432952327" duration="26289000" />
       <workItem from="1708728622254" duration="745000" />
-      <workItem from="1710367794329" duration="12146000" />
-      <workItem from="1710437164370" duration="3918000" />
-      <workItem from="1710441731642" duration="97000" />
-      <workItem from="1710441849458" duration="81107000" />
-      <workItem from="1710599300881" duration="2008000" />
-      <workItem from="1710601318266" duration="1176000" />
-      <workItem from="1710602712231" duration="1316000" />
-      <workItem from="1710606838219" duration="6197000" />
-      <workItem from="1710613841021" duration="1521000" />
-      <workItem from="1710620425818" duration="11148000" />
-      <workItem from="1710633682277" duration="33185000" />
-      <workItem from="1710797068402" duration="358000" />
-      <workItem from="1710797547721" duration="4187000" />
-      <workItem from="1710930551761" duration="4265000" />
-      <workItem from="1710934841094" duration="3767000" />
-      <workItem from="1710938711912" duration="3732000" />
-      <workItem from="1710943223591" duration="771000" />
-      <workItem from="1710944085943" duration="7598000" />
-      <workItem from="1710954542547" duration="6370000" />
-      <workItem from="1710961023988" duration="896000" />
-      <workItem from="1710962034525" duration="13491000" />
-      <workItem from="1710975774701" duration="2831000" />
-      <workItem from="1711015672500" duration="3385000" />
-      <workItem from="1711019498793" duration="13366000" />
-      <workItem from="1711633365205" duration="50000" />
-      <workItem from="1711882357239" duration="2412000" />
+      <workItem from="1710968200401" duration="2282000" />
+      <workItem from="1710970508702" duration="22292000" />
+      <workItem from="1712588489547" duration="322000" />
     </task>
     <task id="LOCAL‎-00001" summary="prototype">
       <option name="closed" value="true" />
@@ -331,118 +273,20 @@
     </task>
     <task id="LOCAL‎-00002" summary="prototype">
       <option name="closed" value="true" />
-      <created>1710530694846</created>
+      <created>1711018326622</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL‎-00002" />
       <option name="project" value="LOCAL‎" />
-      <updated>1710530694848</updated>
+      <updated>1711018326622</updated>
     </task>
-    <task id="LOCAL‎-00003" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710545775915</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710545775916</updated>
-    </task>
-    <task id="LOCAL‎-00004" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710545859392</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL‎-00004" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710545859392</updated>
-    </task>
-    <task id="LOCAL‎-00005" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710946517681</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL‎-00005" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710946517681</updated>
-    </task>
-    <task id="LOCAL‎-00006" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710947197537</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL‎-00006" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710947197537</updated>
-    </task>
-    <task id="LOCAL‎-00007" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710969693974</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL‎-00007" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710969693974</updated>
-    </task>
-    <task id="LOCAL‎-00008" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1710977244298</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL‎-00008" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1710977244298</updated>
-    </task>
-    <task id="LOCAL‎-00009" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1711882521080</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL‎-00009" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1711882521080</updated>
-    </task>
-    <task id="LOCAL‎-00010" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1711882690636</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL‎-00010" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1711882690636</updated>
-    </task>
-    <task id="LOCAL‎-00011" summary="prototype">
-      <option name="closed" value="true" />
-      <created>1711884769457</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL‎-00011" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1711884769457</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="prototype" />
     <option name="LAST_COMMIT_MESSAGE" value="prototype" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="javax.persistence.TransactionRequiredException" package="javax.persistence" />
-          <option name="timeStamp" value="6" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/p2_g5$il_cshaifasweng_OCSFMediatorExample_server_App.ic" NAME="il.cshaifasweng.OCSFMediatorExample.server.App Coverage Results" MODIFIED="1710437398983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>il.cshaifasweng.OCSFMediatorExample.server.*</FILTER>
-    </SUITE>
   </component>
 </project>

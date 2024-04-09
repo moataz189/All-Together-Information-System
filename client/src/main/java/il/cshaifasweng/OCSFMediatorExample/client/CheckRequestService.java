@@ -22,6 +22,10 @@ public class CheckRequestService {
 
     @FXML // fx:id="tasks"
     private Button tasks; // Value injected by FXMLLoader
+    @FXML
+    private Button acceptbtn;
+    @FXML
+    private Button removebtn;
 
     public static List<Task> requests =new ArrayList<>();
     private Task requestedTask = null;
@@ -57,6 +61,22 @@ public class CheckRequestService {
         alert.setHeaderText("Task Details: " );
         alert.setContentText(task);
         alert.showAndWait();
+    }
+    @FXML
+    void accept(ActionEvent event) throws IOException {
+        if(requestedTask != null){
+            int id= requestedTask.getIdNum();
+            System.out.println(id);
+            String message = "Task is Accept@" + String.valueOf(id) + "@" + "0";
+            SimpleClient.getClient().sendToServer(message);
+
+        }
+
+    }
+
+    @FXML
+    void remove(ActionEvent event) {
+
     }
     @FXML
     void previous(ActionEvent event) throws IOException {

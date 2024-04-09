@@ -16,5 +16,7 @@
         <ListView fx:id="communityTasks" layoutX="112.0" layoutY="113.0" prefHeight="182.0" prefWidth="382.0" style="-fx-background-color: white;" />
         <Button fx:id="back" layoutX="112.0" layoutY="323.0" mnemonicParsing="false" onAction="#previous" prefWidth="80.0" text="back" />
         <Button fx:id="tasks" layoutX="417.0" layoutY="323.0" mnemonicParsing="false" onAction="#tasksDetails" prefWidth="80.0" text="Task details" />
+      <Button fx:id="acceptbtn" layoutX="206.0" layoutY="323.0" mnemonicParsing="false" onAction="#accept" prefHeight="26.0" prefWidth="71.0" text="Accept" />
+      <Button fx:id="removebtn" layoutX="293.0" layoutY="324.0" mnemonicParsing="false" onAction="#remove" prefHeight="26.0" prefWidth="80.0" text="Reject" />
     </children>
 </AnchorPane>
