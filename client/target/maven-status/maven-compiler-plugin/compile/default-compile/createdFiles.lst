@@ -8,7 +8,9 @@ il\cshaifasweng\OCSFMediatorExample\client\UpdateTaskDetails.class
 il\cshaifasweng\OCSFMediatorExample\client\Main.class
 il\cshaifasweng\OCSFMediatorExample\client\displayTaskController.class
 il\cshaifasweng\OCSFMediatorExample\client\stringSubscriber.class
+il\cshaifasweng\OCSFMediatorExample\client\RejectControl.class
 il\cshaifasweng\OCSFMediatorExample\client\CheckRequestService.class
+il\cshaifasweng\OCSFMediatorExample\client\MessagesToUser.class
 il\cshaifasweng\OCSFMediatorExample\client\CommunityMembers.class
 il\cshaifasweng\OCSFMediatorExample\client\CommunityTaskControl.class
 il\cshaifasweng\OCSFMediatorExample\client\NewTaskDataControl.class
