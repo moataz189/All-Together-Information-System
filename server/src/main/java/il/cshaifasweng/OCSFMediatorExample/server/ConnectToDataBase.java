@@ -35,6 +35,7 @@ public class ConnectToDataBase {
         configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Task.class);
         configuration.addAnnotatedClass(UserControl.class);
+        configuration.addAnnotatedClass(MessageToUser.class);
 //        configuration.addAnnotatedClass(UploadedTaskList.class);
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
         return configuration.buildSessionFactory(serviceRegistry);
@@ -95,6 +96,35 @@ public class ConnectToDataBase {
         }
         return null;
     }
+    public static List<MessageToUser> getMessagesBySender(Long senderId) {
+        try {
+            SessionFactory sessionFactory = getSessionFactory();
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            System.out.println("Getting data related to sender: " + senderId);
+            CriteriaBuilder builder = session.getCriteriaBuilder();
+            CriteriaQuery<MessageToUser> query = builder.createQuery(MessageToUser.class);
+            Root<MessageToUser> root = query.from(MessageToUser.class);
+
+            // Adding a condition to filter data based on sender ID
+            query.where(builder.equal(root.get("recipient"), senderId));
+
+            // Execute the query and get the list of related data
+            List<MessageToUser> dataList = session.createQuery(query).getResultList();
+            return dataList;
+        } catch (Exception e) {
+            if (session != null && session.getTransaction() != null && session.getTransaction().isActive()) {
+                session.getTransaction().rollback(); // Rollback transaction if an exception occurs
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+        return null;
+    }
+
 
     public static List<Task> getTasksUploadedByCommunityMembers(String community) {
         try {
@@ -247,6 +277,32 @@ public class ConnectToDataBase {
             }
         }
     }
+    static void Add_message(MessageToUser message) throws Exception {
+        try {
+            System.out.println("Trying to add a message to the database...");
+            SessionFactory sessionFactory = getSessionFactory();
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+
+            session.save(message); // Save the message
+
+            session.flush(); // Flush changes to the session
+            session.getTransaction().commit(); // Commit the transaction
+
+            System.out.println("Message added successfully to the database.");
+        } catch (HibernateException e) {
+            if (session != null && session.getTransaction() != null && session.getTransaction().isActive()) {
+                session.getTransaction().rollback(); // Rollback the transaction if an exception occurs during the transaction
+            }
+            // Log the exception or handle it accordingly
+            System.err.println("Error adding message to the database: " + e.getMessage());
+        } finally {
+            if (session != null) {
+                session.close(); // Close the session
+            }
+        }
+    }
+
 
     static void addTask(Task task) throws Exception {
         User temp = null;
@@ -336,20 +392,6 @@ public class ConnectToDataBase {
         Task task4 = new Task(LocalDate.of(2024, 2, 21), LocalTime.of(13, 4), 3, "Transportation", "I want to go to the Hospital", 0.0f);
         Task task5 = new Task(LocalDate.of(2024, 2, 21), LocalTime.of(15, 20), 0, "Transportation", "", 0.0f);
         Task task6 = new Task(LocalDate.of(2024, 2, 21), LocalTime.of(17, 10), 0, "Buy Medicine", "", 0.0f);
-        user10.getTasks().add(task1);
-        user2.getTasks().add(task2);
-        task1.setUser(user1);
-        user3.getTasks().add(task3);
-        user4.getTasks().add(task4);
-        user5.getTasks().add(task5);
-        user6.getTasks().add(task6);
-        task2.setUser(user2);
-        task3.setUser(user3);
-        task4.setUser(user4);
-        task5.setUser(user5);
-        task6.setUser(user6);
-
-
         session.save(task1);
         session.flush();
         System.out.println(LocalTime.now().getHour());
@@ -363,6 +405,21 @@ public class ConnectToDataBase {
         session.flush();
         session.save(task6);
         session.flush();
+        user8.getTasks().add(task1);
+        user2.getTasks().add(task2);
+        task1.setUser(user8);
+        user3.getTasks().add(task3);
+        user4.getTasks().add(task4);
+        user5.getTasks().add(task5);
+        user6.getTasks().add(task6);
+        task2.setUser(user2);
+        task3.setUser(user3);
+        task4.setUser(user4);
+        task5.setUser(user5);
+        task6.setUser(user6);
+
+
+
 
         session.update(user1);
         session.flush();

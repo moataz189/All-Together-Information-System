@@ -1,13 +1,10 @@
 package il.cshaifasweng.OCSFMediatorExample.client;
 
-import il.cshaifasweng.OCSFMediatorExample.entities.Task;
-import il.cshaifasweng.OCSFMediatorExample.entities.User;
-import il.cshaifasweng.OCSFMediatorExample.entities.UserControl;
+import il.cshaifasweng.OCSFMediatorExample.entities.*;
 import javafx.scene.control.Alert;
 import org.greenrobot.eventbus.EventBus;
 
 import il.cshaifasweng.OCSFMediatorExample.client.ocsf.AbstractClient;
-import il.cshaifasweng.OCSFMediatorExample.entities.Warning;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -53,6 +50,24 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
+                    }
+                    else if (messageParts[0].equals("Messages")) {
+                        System.out.println("hh");
+                        MessagesToUser.message= (List<MessageToUser>) messageParts[1];
+                       // MessagesToUser.users=(List<User>)messageParts[2];
+                        Platform.runLater(() -> {
+                            try {
+                                App.setRoot("MessagesToUser");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                    }
+                    else if (messageParts[0].equals("all users send")) {
+
+
+                         MessagesToUser.users=(List<User>)messageParts[1];
+
                     }
                 }
             } else {
@@ -105,6 +120,7 @@ public class SimpleClient extends AbstractClient {
                 }
             }
             if (msg instanceof byte[]) {
+
                 byte[] receivedUserBytes = (byte[]) msg;
 
                 try (ByteArrayInputStream bis = new ByteArrayInputStream(receivedUserBytes);

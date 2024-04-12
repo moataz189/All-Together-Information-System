@@ -57,7 +57,6 @@ public class User implements Serializable {
 
     private String communityManager;
 
-    String password;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "task_id")
     List <Task> tasks = new ArrayList<>();
@@ -81,7 +80,7 @@ public class User implements Serializable {
         this.community = community;
         this.username = username;
         this.salt = generateSalt();
-        this.password=Password;
+        //this.password=Password;
         this.communityManager=communityManager;
         this.passwordHash = hashPassword(Password, this.salt);
         this.address = address;
@@ -139,12 +138,12 @@ public class User implements Serializable {
     public String getID() {
         return Id;
     }
-    public void setPas(String Pas){
-        this.password=Pas;
-    }
-    public String getPassword() {
-        return this.password;
-    }
+//    public void setPas(String Pas){
+//        this.password=Pas;
+//    }
+//    public String getPassword() {
+//        return this.password;
+//    }
     public void setId(String ID){
         this.Id=ID;
     }

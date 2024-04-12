@@ -279,6 +279,7 @@ package il.cshaifasweng.OCSFMediatorExample.server;
 import com.mysql.cj.xdevapi.Client;
 import il.cshaifasweng.OCSFMediatorExample.client.SimpleClient;
 import il.cshaifasweng.OCSFMediatorExample.client.UpdateTaskDetails;
+import il.cshaifasweng.OCSFMediatorExample.entities.MessageToUser;
 import il.cshaifasweng.OCSFMediatorExample.entities.Task;
 import il.cshaifasweng.OCSFMediatorExample.entities.User;
 import il.cshaifasweng.OCSFMediatorExample.entities.UserControl;
@@ -290,6 +291,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.time.LocalDateTime;
 import java.util.*;
 
 import org.hibernate.HibernateException;
@@ -355,7 +357,35 @@ public class SimpleServer extends AbstractServer {
                 array[0] = "uploaded"; // Assign a String object to the first index
                 array[1] = requests;
                 client.sendToClient(array);
-            } else if (message.equals("check requests")) {
+
+            }else if (message.equals("Get uploaded messages"))
+            {
+                Long id= 0L;
+                List<User> allUsers = ConnectToDataBase.getAllUsers();
+                for (User user : allUsers)
+                {
+                    if(user.getID().equals(UserControl.getLoggedInUser().getID()))
+                    {
+                        id= user.getkeyId();
+                    }
+                }
+                List<MessageToUser> requests = ConnectToDataBase.getMessagesBySender(id);
+
+                Object[] array = new Object[2];
+                array[0] = "Messages"; // Assign a String object to the first index
+                array[1] = requests;
+                client.sendToClient(array);
+
+            }
+            else if (message.equals("Get all users")) {
+                List<User> allUsers = ConnectToDataBase.getAllUsers();
+                Object[] array = new Object[2];
+                array[0] = "all users send"; // Assign a String object to the first index
+                array[1] = allUsers;
+                client.sendToClient(array);
+
+            }
+            else if (message.equals("check requests")) {
                 List<Task> requests = ConnectToDataBase.getTasksWithStatus(UserControl.getLoggedInUser().getCommunityManager(), 3);
                 Object[] array = new Object[2];
                 array[0] = "request"; // Assign a String object to the first index
@@ -391,6 +421,60 @@ public class SimpleServer extends AbstractServer {
 
                }
            }
+            else if (message.startsWith("The reason of rejected is")) {
+
+                String[] parts = message.split("@");
+                String reason = parts[1];
+                System.out.println(reason);
+                String newData = parts[2];
+                System.out.println(newData);
+                String news = parts[3];
+                //System.out.println(news + "*");
+                List<User> allUsers = ConnectToDataBase.getAllUsers();
+                User manger ;
+                MessageToUser Message=new MessageToUser();
+                Message.setContent(reason);
+                Long recipientId = Long.valueOf(news);
+                Message.setRecipient(recipientId);
+                for (User user : allUsers) {
+                    System.out.println("user.getCommunityManager(): " + user.getCommunityManager());
+                    System.out.println("newData: " + newData);
+                    if (user.getCommunityManager().equals(newData))
+                    {
+                        Message.setSender(user.getkeyId());
+                    }
+                }
+
+                Message.setSentTime(LocalDateTime.now());
+                ConnectToDataBase.Add_message(Message);
+
+
+
+            }
+            else if (message.startsWith("Task is rejected")) {
+                String[] parts = message.split("@");
+                if (parts.length >= 3 && parts[0].equals("Task is rejected")) {
+                    String taskId = parts[1];
+                    System.out.println(taskId + "*");
+                    String newData = parts[2];
+                    System.out.println(newData + "*");
+                    try {
+                        int taskIdInt = Integer.parseInt(taskId);
+                        Task task = ConnectToDataBase.getTaskById(taskIdInt);
+                        if (task != null) {
+                            ConnectToDataBase.updateTaskData(taskIdInt, newData, task,"status");
+                        } else {
+                            System.out.println("Task with ID " + taskId + " not found.");
+                        }
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid task ID: " + taskId);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+            }
              else if (message.startsWith("update data")) {
                 System.out.println("server "+ UpdateTaskDetails.getUpdateVale());
 

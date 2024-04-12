@@ -34,6 +34,27 @@ public class SecondaryController {
 
     @FXML
     private Button cansel_REQUESTBT;
+    @FXML
+    private Button message;
+
+    @FXML
+    void message(ActionEvent event) throws IOException {
+
+        try {
+            SimpleClient.getClient().sendToServer("Get uploaded messages");
+        } catch (IOException e) {
+            showAlert("Error", "Failed to get uploaded community tasks: " + e.getMessage());
+            e.printStackTrace();
+        }
+        try {
+            SimpleClient.getClient().sendToServer("Get all users");
+        } catch (IOException e) {
+            showAlert("Error", "Failed to get uploaded community tasks: " + e.getMessage());
+            e.printStackTrace();
+        }
+
+
+    }
 
 
     @FXML

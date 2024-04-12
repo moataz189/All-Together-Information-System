@@ -8,15 +8,27 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.CheckRequestService">
     <children>
-        <Label alignment="BASELINE_CENTER" layoutX="143.0" layoutY="51.0" prefHeight="36.0" prefWidth="313.0" text="Chceck Service Requests" textAlignment="CENTER" textFill="#1bbde3">
+        <Label alignment="BASELINE_CENTER" layoutX="143.0" layoutY="51.0" prefHeight="36.0" prefWidth="313.0" text="Check Service Requests" textAlignment="CENTER" textFill="#b98edc">
             <font>
                 <Font name="David Bold" size="20.0" />
             </font>
         </Label>
-        <ListView fx:id="communityTasks" layoutX="112.0" layoutY="113.0" prefHeight="182.0" prefWidth="382.0" style="-fx-background-color: white;" />
-        <Button fx:id="back" layoutX="112.0" layoutY="323.0" mnemonicParsing="false" onAction="#previous" prefWidth="80.0" text="back" />
-        <Button fx:id="tasks" layoutX="417.0" layoutY="323.0" mnemonicParsing="false" onAction="#tasksDetails" prefWidth="80.0" text="Task details" />
-      <Button fx:id="acceptbtn" layoutX="206.0" layoutY="323.0" mnemonicParsing="false" onAction="#accept" prefHeight="26.0" prefWidth="71.0" text="Accept" />
-      <Button fx:id="removebtn" layoutX="293.0" layoutY="324.0" mnemonicParsing="false" onAction="#remove" prefHeight="26.0" prefWidth="80.0" text="Reject" />
+        <ListView fx:id="communityTasks" layoutX="45.0" layoutY="113.0" prefHeight="182.0" prefWidth="509.0" style="-fx-background-color: white;" />
+        <Button fx:id="back" layoutX="45.0" layoutY="323.0" mnemonicParsing="false" onAction="#previous" prefWidth="110.0" style="-fx-background-color: #b98edc;" text="back" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+        <Button fx:id="tasks" layoutX="430.0" layoutY="323.0" mnemonicParsing="false" onAction="#tasksDetails" prefWidth="110.0" style="-fx-background-color: #b98edc;" text="Task details" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+        <Button fx:id="acceptbtn" layoutX="177.0" layoutY="323.0" mnemonicParsing="false" onAction="#accept" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #b98edc;" text="Accept" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
+        <Button fx:id="removebtn" layoutX="300.0" layoutY="323.0" mnemonicParsing="false" onAction="#remove" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #b98edc;" text="Reject" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font></Button>
     </children>
 </AnchorPane>

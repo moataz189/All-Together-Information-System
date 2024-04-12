@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="630.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.RequestController">
    <children>
-      <ChoiceBox fx:id="services" layoutX="285.0" layoutY="195.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
+      <ChoiceBox fx:id="cservices" layoutX="285.0" layoutY="195.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
       <TextField fx:id="explainService" layoutX="285.0" layoutY="247.0" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: gray;" />
       <Button fx:id="previousPage" layoutX="170.0" layoutY="333.0" mnemonicParsing="false" onAction="#getPrevious" prefWidth="80.0" style="-fx-background-color: #7ad0ea;" text="Back" />
       <Button fx:id="submit" layoutX="285.0" layoutY="333.0" mnemonicParsing="false" onAction="#submitRequest" prefWidth="150.0" style="-fx-background-color: #7ad0ea;" text="Submit Request" />
