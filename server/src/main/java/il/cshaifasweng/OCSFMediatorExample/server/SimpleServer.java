@@ -342,6 +342,43 @@ public class SimpleServer extends AbstractServer {
                 return;
             }
             String message = (String) msg;
+            if(message.startsWith("The key"))
+            {
+                String[] parts = message.split(":", 2);
+                if (parts.length < 2) {
+
+                }
+                String keyStr = parts[1].trim();
+
+                if (keyStr.isEmpty()) {
+                    System.out.println("There is no key id provided.");
+                } else {
+                    // Attempt to convert the trimmed string to an int
+                    try {
+                        int keyId = Integer.parseInt(keyStr);
+                        System.out.println("The key id is a number: " + keyId);
+                        List<User> allUsers = ConnectToDataBase.getAllUsers();
+                        boolean x=false;
+                        for(User user : allUsers )
+                        {
+                            if (user.getkeyId()==keyId)
+                            {
+                                client.sendToClient("The key id is true");
+                                x=true;
+                            }
+                        }
+                        if(x==false)
+                        {
+                            client.sendToClient("The key id is false");
+                        }
+
+                    } catch (NumberFormatException e) {
+                        System.out.println("The provided key id is not a valid number.");
+                    }
+                }
+
+            }
+
             if (message.equals("get tasks")) {
                 List<Task> alltasks = ConnectToDataBase.getAllTasks();
                 Object[] array = new Object[2];

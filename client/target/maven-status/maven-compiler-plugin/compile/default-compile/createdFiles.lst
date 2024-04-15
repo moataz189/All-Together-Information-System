@@ -19,6 +19,7 @@ il\cshaifasweng\OCSFMediatorExample\client\ocsf\ObservableSWRClient.class
 il\cshaifasweng\OCSFMediatorExample\client\SimpleClient.class
 il\cshaifasweng\OCSFMediatorExample\client\ocsf\ObservableClient.class
 il\cshaifasweng\OCSFMediatorExample\client\Managercontrol.class
+il\cshaifasweng\OCSFMediatorExample\client\distressCallControl.class
 il\cshaifasweng\OCSFMediatorExample\client\VolunterControl.class
 il\cshaifasweng\OCSFMediatorExample\client\ocsf\AdaptableClient.class
 il\cshaifasweng\OCSFMediatorExample\client\SecondaryController.class

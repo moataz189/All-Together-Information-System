@@ -166,7 +166,9 @@ public class PrimaryController implements Initializable {
 
 
     @FXML
-    void distress(ActionEvent event) {
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCall");
+
 
     }
 }

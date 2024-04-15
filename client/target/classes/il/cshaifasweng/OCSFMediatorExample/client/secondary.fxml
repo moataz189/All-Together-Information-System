@@ -18,7 +18,7 @@
             <Font name="David Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="LOGOUTBUTTON" layoutX="172.0" layoutY="341.0" mnemonicParsing="false" onAction="#LOGOUT" prefWidth="250.0" style="-fx-background-color: rgba(122,208,234,0.85);" text="Log Out" textFill="WHITE">
+      <Button fx:id="LOGOUTBUTTON" layoutX="172.0" layoutY="377.0" mnemonicParsing="false" onAction="#LOGOUT" prefWidth="250.0" style="-fx-background-color: rgba(122,208,234,0.85);" text="Log Out" textFill="WHITE">
          <font>
             <Font name="David Bold" size="16.0" />
          </font>
@@ -44,6 +44,11 @@
          </font>
       </Button>
       <Button fx:id="Canceldistressbt" layoutX="174.0" layoutY="281.0" mnemonicParsing="false" onAction="#CancelDistress" prefWidth="250.0" style="-fx-background-color: #7ad0ea;" text="Cancel Distress" textFill="WHITE">
+         <font>
+            <Font name="David Bold" size="16.0" />
+         </font>
+      </Button>
+      <Button fx:id="message" layoutX="174.0" layoutY="328.0" mnemonicParsing="false" onAction="#message" prefHeight="30.0" prefWidth="250.0" style="-fx-background-color: #7ad0ea;" text="Messages" textFill="WHITE">
          <font>
             <Font name="David Bold" size="16.0" />
          </font>
