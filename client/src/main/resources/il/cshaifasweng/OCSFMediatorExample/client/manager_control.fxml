@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="600.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.Managercontrol">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.Managercontrol">
     <children>
 
         <Button fx:id="members" layoutX="142.0" layoutY="87.0" mnemonicParsing="false" onAction="#getCommunityMembers" prefWidth="340.0" style="-fx-background-color: B98EDCFF;" text="Community Memberes" textFill="WHITE">
@@ -54,5 +53,14 @@
          </font></Label>
       <TextField fx:id="name" layoutX="142.0" layoutY="33.0" />
       <TextField fx:id="id" layoutX="414.0" layoutY="33.0" />
+        <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
+            <graphic>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+                    <image>
+                        <Image url="@pic/siren.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

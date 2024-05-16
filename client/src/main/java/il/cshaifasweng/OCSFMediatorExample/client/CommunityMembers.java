@@ -2,19 +2,13 @@ package il.cshaifasweng.OCSFMediatorExample.client;
 
 import il.cshaifasweng.OCSFMediatorExample.entities.User;
 import javafx.application.Platform;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-
-import java.io.InputStream;
-import java.io.FileInputStream;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,20 +28,15 @@ public class CommunityMembers {
 
     public static List<User> users = new ArrayList<>();
     private User selectedUser = null;
-    private InputStream stream;
+    @FXML
+    private Button DistressButtonControl;
 
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\diversity.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
     }
-    Image myImage1 = new Image(stream);
 
     public void initialize() {
-        image.setImage(myImage1);
-
         if (users.isEmpty()) {
             Platform.runLater(() -> {
                 showCompletionMessage("Empty", "There are no members in your community.");

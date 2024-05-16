@@ -37,7 +37,13 @@ public class confirmVol {
     private ListView<String> volList; // Value injected by FXMLLoader
     public static List<Task> getVolunteersWork = new ArrayList<>();
     private Task requestedVol = null;
+    @FXML
+    private Button DistressButtonControl;
 
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
     public void initialize() {
         EventBus.getDefault().register(this);
         note.setEditable(false);

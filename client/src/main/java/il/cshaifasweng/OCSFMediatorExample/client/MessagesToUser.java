@@ -31,7 +31,13 @@ public class MessagesToUser {
     public static List<MessageToUser> message = new ArrayList<>();
     private MessageToUser selectedmessage = null;
     public static List<User> users = new ArrayList<>();
+    @FXML
+    private Button DistressButtonControl;
 
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
     @FXML
     void Refresh(ActionEvent event) {
         try {
@@ -107,28 +113,15 @@ public class MessagesToUser {
     @FXML
     void details(ActionEvent event) {
         if (selectedmessage != null) {
-            String Manager = "none";
-            String email = "none";
-            for (User user : users) {
-
-                if (user.getkeyId().equals(selectedmessage.getSender())) {
-                    Manager = user.getFirstName() + " " + user.getLastName();
-                    email = user.getEmail();
-
-                }
-            }
             LocalDateTime f = selectedmessage.getSentTime();
-            String x = String.format(" Manager Name:  %s\nManager Email: %s\n The time the message was Sent: %s", Manager, email, f);
+            String x = String.format("The time the message was Sent: %s", f);
             showAlert(x);
         }
-
-
     }
-
     private void showAlert(String task) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Message details");
-        alert.setHeaderText("Manager and message Details: ");
+        alert.setHeaderText("Message Details: ");
         alert.setContentText(task);
         alert.showAndWait();
     }

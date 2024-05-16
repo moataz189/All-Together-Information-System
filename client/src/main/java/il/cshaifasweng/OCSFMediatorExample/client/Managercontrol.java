@@ -44,6 +44,12 @@ public class Managercontrol {
 
     @FXML
     private Button volunteer;
+
+    @FXML
+    private Button DistressButtonControl;
+
+
+
     private static User managerLogIn;
 
     public void initialize() {
@@ -57,6 +63,14 @@ public class Managercontrol {
         }
         id.setEditable(false);
         name.setEditable(false);
+    }
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
+    @FXML
+    void getDistressCalls(ActionEvent event) throws IOException {
+        App.setRoot("Distresscalloption");
     }
 
     // Getter for userLogIn
@@ -99,10 +113,7 @@ public class Managercontrol {
         }
     }
 
-    @FXML
-    void getDistressCalls(ActionEvent event) throws IOException {
-        App.setRoot("Distresscalloption");
-    }
+
 
     @FXML
     void getDoneTasks(ActionEvent event) {

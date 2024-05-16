@@ -27,7 +27,13 @@ public class PerformedTaskControl {
     public static List<Task> doneTasks =new ArrayList<>();
     private Task requestedTask = null;
 
+    @FXML
+    private Button DistressButtonControl;
 
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
     private void showCompletionMessage(String title, String message) {
         // Display an alert dialog to the user
         Alert alert = new Alert(Alert.AlertType.INFORMATION); // Use INFORMATION type for completion message
@@ -39,7 +45,7 @@ public class PerformedTaskControl {
     public void initialize(){
         if (doneTasks.isEmpty()) {
             Platform.runLater(() -> {
-                showCompletionMessage("Empty", "There are no performed tasks.");
+                showCompletionMessage("Empty", "There are no performed tasks in your community.");
                 try {
                     App.setRoot("manager_control");
                 } catch (IOException e) {

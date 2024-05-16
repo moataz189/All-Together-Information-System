@@ -1,12 +1,11 @@
 
 package il.cshaifasweng.OCSFMediatorExample.client;
-import il.cshaifasweng.OCSFMediatorExample.entities.Task;
-import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
 
+import il.cshaifasweng.OCSFMediatorExample.entities.Task;
 import il.cshaifasweng.OCSFMediatorExample.entities.User;
-import il.cshaifasweng.OCSFMediatorExample.entities.UserControl;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -41,6 +40,7 @@ public class displayTaskController {
         // Close the stage
         stage.close();
     }
+
     public void initData(Task task) {
         // Update UI elements with task details
 

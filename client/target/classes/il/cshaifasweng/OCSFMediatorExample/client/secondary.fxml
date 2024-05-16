@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.SecondaryController">
    <children>
       <Button fx:id="Requesthelpbutton" layoutX="175.0" layoutY="84.0" mnemonicParsing="false" onAction="#Requesthelp" prefWidth="250.0" style="-fx-background-color: #7ad0ea;" text="Submit Service Request" textFill="WHITE">
@@ -27,13 +26,17 @@
          </font>
       </Button>
       <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
-         <font>
-            <Font name="Franklin Gothic Demi" size="21.0" />
-         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+               <image>
+                  <Image url="@pic/siren.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <ImageView fitHeight="76.0" fitWidth="155.0" layoutX="14.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="130.0" fitWidth="119.0" layoutX="23.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../Downloads/ATIS.jpg" />
+            <Image url="@pic/introduction.png" />
          </image>
       </ImageView>
       <Button fx:id="cansel_REQUESTBT" layoutX="176.0" layoutY="138.0" mnemonicParsing="false" onAction="#CANCELREQUST" prefWidth="250.0" style="-fx-background-color: #7ad0ea;" text="Cancel Service Request" textFill="WHITE">
@@ -46,7 +49,7 @@
             <Font name="David Bold" size="16.0" />
          </font>
       </Button>
-      <ImageView fx:id="im" fitHeight="100.0" fitWidth="127.0" layoutX="41.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="im" fitHeight="100.0" fitWidth="127.0" layoutX="28.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="userName" layoutX="134.0" layoutY="21.0" prefHeight="30.0" prefWidth="155.0" />
       <Label layoutX="61.0" layoutY="27.0" prefHeight="18.0" prefWidth="61.0" text="Welcome">
          <font>

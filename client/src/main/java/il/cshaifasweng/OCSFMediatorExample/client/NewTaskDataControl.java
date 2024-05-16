@@ -3,21 +3,17 @@
  */
 
 package il.cshaifasweng.OCSFMediatorExample.client;
-import javafx.application.Platform;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 
 
 public class NewTaskDataControl {
@@ -43,30 +39,15 @@ public class NewTaskDataControl {
 
     @FXML
     private ImageView im2;
-   /* private InputStream stream;
 
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\done.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    @FXML
+    private Button DistressButtonControl;
+
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
     }
-    Image myImage1 = new Image(stream);
-    private InputStream stream1;
-
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\audit.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    Image myImage2 = new Image(stream);*/
-
     public void initialize() {
-      //  im1.setImage(myImage2);
-      //  im2.setImage(myImage1);
         title.setEditable(false);
         note.setEditable(false);
         title.setText("Please enter the value of "+ UpdateTaskDetails.getUpdateVale()+".");

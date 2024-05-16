@@ -4,37 +4,53 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.CommunityTaskControl">
-   <children>
-      <Label alignment="BASELINE_CENTER" layoutX="107.0" layoutY="14.0" prefHeight="36.0" prefWidth="313.0" text="Community Tasks List" textAlignment="CENTER" textFill="#b473ea">
-         <font>
-            <Font name="David Bold" size="20.0" />
-         </font>
-      </Label>
-      <ListView fx:id="communityTasks" layoutX="85.0" layoutY="66.0" prefHeight="283.0" prefWidth="342.0" style="-fx-background-color: white;" />
-      <Button fx:id="back" layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#previous" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Back" textFill="WHITE">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font></Button>
-      <Button fx:id="tasks" layoutX="454.0" layoutY="120.0" mnemonicParsing="false" onAction="#tasksDetails" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Task details" textFill="WHITE">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font></Button>
-      <Button fx:id="submitter" layoutX="454.0" layoutY="169.0" mnemonicParsing="false" onAction="#submitterDetails" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Submitter details" textFill="WHITE">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font>
-      </Button>
-      <TextArea fx:id="note" layoutX="85.0" layoutY="406.0" prefHeight="117.0" prefWidth="342.0" style="-fx-background-color: without; -fx-border-color: without; -fx-region-background: without;" text="Status 0: Request approved.&#10;Status 1: Task that has at least one volunteer.&#10;Status 2: Task is completed.&#10;Status 3: Request not yet approved.&#10;Status 4: Request has been disapproved.&#10;Status 5: Service request has been cancelled." />
-      <ImageView fx:id="im" fitHeight="99.0" fitWidth="137.0" layoutX="447.0" layoutY="326.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="refresh" layoutX="454.0" layoutY="263.0" mnemonicParsing="false" onAction="#Refresh" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Refresh" textFill="WHITE">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <Label alignment="BASELINE_CENTER" layoutX="107.0" layoutY="14.0" prefHeight="36.0" prefWidth="313.0" text="Community Tasks List" textAlignment="CENTER" textFill="#b473ea">
+            <font>
+                <Font name="David Bold" size="20.0" />
+            </font>
+        </Label>
+        <ListView fx:id="communityTasks" layoutX="85.0" layoutY="66.0" prefHeight="278.0" prefWidth="342.0" style="-fx-background-color: white;" />
+        <Button fx:id="back" layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#previous" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="tasks" layoutX="454.0" layoutY="120.0" mnemonicParsing="false" onAction="#tasksDetails" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Task details" textFill="WHITE">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="submitter" layoutX="454.0" layoutY="169.0" mnemonicParsing="false" onAction="#submitterDetails" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Submitter details" textFill="WHITE">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <TextArea fx:id="note" layoutX="85.0" layoutY="357.0" prefHeight="117.0" prefWidth="342.0" style="-fx-background-color: without; -fx-border-color: without; -fx-region-background: without;" text="Status 0: Request approved.&#10;Status 1: Task that has at least one volunteer.&#10;Status 2: Task is completed.&#10;Status 3: Request not yet approved.&#10;Status 4: Request has been disapproved.&#10;Status 5: Service request has been cancelled." />
+        <ImageView fx:id="im" fitHeight="71.0" fitWidth="68.0" layoutX="481.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@pic/statistics.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="refresh" layoutX="454.0" layoutY="263.0" mnemonicParsing="false" onAction="#Refresh" prefWidth="122.0" style="-fx-background-color: #b473ea;" text="Refresh" textFill="WHITE">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
+            <graphic>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+                    <image>
+                        <Image url="@pic/siren.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
 </AnchorPane>

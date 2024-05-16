@@ -27,19 +27,15 @@ public class RejectControl {
     private ImageView im;
 
 
-   /* private InputStream stream;
+    @FXML
+    private Button DistressButtonControl;
 
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\say-no.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
     }
-    Image myImage1 = new Image(stream);*/
     @FXML
     void initialize() {
-       // im.setImage(myImage1);
         // Initialize the ChoiceBox with choices
         services.getItems().add("Beyond Scope of Service or Expertise");
         services.getItems().add("Resource Constraints");
@@ -83,7 +79,7 @@ public class RejectControl {
         System.out.println(manger_id);
         String user_id = t.getUser().getID();
 
-        SimpleClient.getClient().sendToServer("The reason of rejected is@" + "Your Request: " + service.getRequestedTask().getServiceType() + "is Rejected by your manager,the reason is: " + services.getValue() + "@" + t.getUser().getCommunity() + "@" + (user_id));
+        SimpleClient.getClient().sendToServer("The reason of rejected is@" + "Your Request: " + service.getRequestedTask().getServiceType() + "is rejected by your manager, the reason is: " + services.getValue() + "@" + t.getUser().getCommunity() + "@" + (user_id));
         System.out.println(services.getValue());
     }
 

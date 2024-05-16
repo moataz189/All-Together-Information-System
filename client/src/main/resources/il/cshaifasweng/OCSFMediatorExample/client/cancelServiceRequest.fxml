@@ -4,10 +4,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: brighy;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.CancelServiceRequest">
+<AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: brighy;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.CancelServiceRequest">
    <children>
       <Label layoutX="108.0" layoutY="32.0" prefHeight="30.0" prefWidth="352.0" text="                Cancel Request Service" textAlignment="CENTER" textFill="#7ad0ea">
          <font>
@@ -15,21 +17,30 @@
          </font>
       </Label>
       <TextArea fx:id="note" layoutX="70.0" layoutY="79.0" prefHeight="42.0" prefWidth="459.0" text="You can cancel requests that have not been approved or have not yet been&#10; volunteered by a volunteer." />
-      <ListView fx:id="requestsList" layoutX="130.0" layoutY="139.0" prefHeight="122.0" prefWidth="308.0" style="-fx-background-color: bright;" />
-      <Button fx:id="cancel" layoutX="235.0" layoutY="274.0" mnemonicParsing="false" onAction="#CancelRequest" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Cancel Request" textFill="#fcfcfc">
+      <ListView fx:id="requestsList" layoutX="110.0" layoutY="139.0" prefHeight="246.0" prefWidth="388.0" style="-fx-background-color: bright;" />
+      <Button fx:id="cancel" layoutX="238.0" layoutY="396.0" mnemonicParsing="false" onAction="#CancelRequest" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Cancel Request" textFill="#fcfcfc">
          <font>
             <Font name="David Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="235.0" layoutY="347.0" mnemonicParsing="false" onAction="#back" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Back" textFill="WHITE">
+      <Button fx:id="back" layoutX="238.0" layoutY="469.0" mnemonicParsing="false" onAction="#back" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Back" textFill="WHITE">
          <font>
             <Font name="David Bold" size="12.0" />
          </font>
       </Button>
-      <Button fx:id="details" layoutX="235.0" layoutY="310.0" mnemonicParsing="false" onAction="#taskDetails" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Task datails" textFill="WHITE">
+      <Button fx:id="details" layoutX="238.0" layoutY="432.0" mnemonicParsing="false" onAction="#taskDetails" prefHeight="15.0" prefWidth="110.0" style="-fx-background-color: #7ad0ea;" text="Task datails" textFill="WHITE">
          <font>
             <Font name="David Bold" size="12.0" />
          </font>
+      </Button>
+      <Button fx:id="DistressButtonControl" layoutX="442.0" layoutY="443.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="31.399999999999977" AnchorPane.leftAnchor="442.0" AnchorPane.rightAnchor="71.60000000000002" AnchorPane.topAnchor="443.0">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+               <image>
+                  <Image url="@pic/siren.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

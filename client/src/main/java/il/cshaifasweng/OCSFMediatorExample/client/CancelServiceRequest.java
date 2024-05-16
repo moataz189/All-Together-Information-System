@@ -41,9 +41,16 @@ public class CancelServiceRequest {
     public static List<Task> getRequestService = new ArrayList<>();
     private Task requestedTask = null;
 
+    @FXML
+    private Button DistressButtonControl;
+
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
+
     public void initialize() {
         EventBus.getDefault().register(this);
-        // im.setImage(myImage1);
         note.setEditable(false);
         if (getRequestService.isEmpty()) {
             Platform.runLater(() -> {

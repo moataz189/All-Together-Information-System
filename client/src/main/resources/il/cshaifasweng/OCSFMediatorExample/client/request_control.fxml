@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -12,11 +13,24 @@
    <children>
       <ChoiceBox fx:id="services" layoutX="271.0" layoutY="158.0" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: gray;" />
       <TextField fx:id="explainService" layoutX="270.0" layoutY="223.0" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: gray;" />
-      <Button fx:id="previousPage" layoutX="298.0" layoutY="381.0" mnemonicParsing="false" onAction="#getPrevious" prefWidth="80.0" style="-fx-background-color: #7ad0ea;" text="Back" textFill="WHITE">
+      <Button fx:id="previousPage" layoutX="316.0" layoutY="395.0" mnemonicParsing="false" onAction="#getPrevious" prefWidth="80.0" style="-fx-background-color: #7ad0ea;" text="Back" textFill="WHITE">
          <font>
             <Font name="David Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="submit" layoutX="278.0" layoutY="308.0" mnemonicParsing="false" onAction="#submitRequest" prefHeight="14.0" prefWidth="120.0" style="-fx-background-color: without;" />
+      <Button fx:id="submit" layoutX="278.0" layoutY="308.0" mnemonicParsing="false" onAction="#submitRequest" prefHeight="14.0" prefWidth="120.0" style="-fx-background-color: without;">
+      <graphic>
+         <ImageView fitHeight="60.0" fitWidth="131.0" layoutX="10.0" layoutY="10.0">
+            <image>
+               <Image url="@pic/submit.png" />
+            </image>
+         </ImageView>
+      </graphic>
+   </Button>
+      <ImageView fx:id="im" fitHeight="112.0" fitWidth="150.0" layoutX="53.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@pic/help.png" />
+         </image>
+      </ImageView>
       <Label fx:id="note" layoutX="155.0" layoutY="233.0" prefHeight="30.0" prefWidth="90.0" text="Note:">
          <font>
             <Font name="System Bold" size="12.0" />
@@ -32,6 +46,15 @@
             <Font name="David Bold" size="22.0" />
          </font>
       </Label>
-      <ImageView fx:id="image" fitHeight="111.0" fitWidth="173.0" layoutX="95.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="image" fitHeight="111.0" fitWidth="173.0" layoutX="85.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+               <image>
+                  <Image url="@pic/siren.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

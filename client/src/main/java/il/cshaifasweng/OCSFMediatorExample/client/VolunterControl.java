@@ -30,7 +30,13 @@ public class VolunterControl {
 
     public static List<Task> tasks =new ArrayList<>();
     private Task selectedTask = null;
+    @FXML
+    private Button DistressButtonControl;
 
+    @FXML
+    void distress_request(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
     public void initialize() {
         EventBus.getDefault().register(this);
         if (tasks.isEmpty()) {
@@ -41,23 +47,27 @@ public class VolunterControl {
                 }catch (IOException e){
                     throw new RuntimeException(e);
                 }
-
             });
             return;
         }
 
         // Add items to the ListView
         for (Task task : tasks) {
-            this.TasksList.getItems().addAll(task.getServiceType());
+            this.TasksList.getItems().addAll("Task id:" + task.getIdNum() + " - " + task.getServiceType());
         }
 
         // Set event handler for mouse click on ListView
         this.TasksList.setOnMouseClicked(event -> {
+
             String selectedTaskName = this.TasksList.getSelectionModel().getSelectedItem();
             if (selectedTaskName != null) {
-                // Find the selected task in the tasks list
-                for (Task task : tasks) {
-                    if (task.getServiceType().equals(selectedTaskName)) {
+                // Find the selected task in the getCommunityTask list
+                for (Task task :tasks) {
+                    String[] parts1 = selectedTaskName.split("-");
+                    String[] parts2 = parts1[0].split(":");
+                    // Trim the string before parsing it as an integer
+                    int number = Integer.parseInt(parts2[1].trim());
+                    if (task.getIdNum() == number) {
                         selectedTask = task;
                         break;
                     }

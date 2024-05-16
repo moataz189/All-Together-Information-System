@@ -3,34 +3,51 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.UpdateTaskDetails">
-   <children>
-      <Label contentDisplay="CENTER" layoutX="65.0" layoutY="33.0" prefHeight="52.0" prefWidth="384.0" style="-fx-background-color: white; -fx-border-color: white;" text="Update Task Details" textFill="#a761e4" textOverrun="CLIP">
-         <font>
-            <Font name="David Bold" size="24.0" />
-         </font>
-      </Label>
-      <Button fx:id="status" layoutX="225.0" layoutY="206.0" mnemonicParsing="false" onAction="#updateStatus" prefWidth="200.0" style="-fx-background-color: #b473ea;" text="Update Status Task" textFill="#fcfcfc">
+    <children>
+        <Label contentDisplay="CENTER" layoutX="65.0" layoutY="33.0" prefHeight="52.0" prefWidth="384.0" style="-fx-background-color: white; -fx-border-color: white;" text="Update Task Details" textFill="#a761e4" textOverrun="CLIP">
+            <font>
+                <Font name="David Bold" size="24.0" />
+            </font>
+        </Label>
+        <Button fx:id="status" layoutX="225.0" layoutY="206.0" mnemonicParsing="false" onAction="#updateStatus" prefWidth="200.0" style="-fx-background-color: #b473ea;" text="Update Status Task" textFill="#fcfcfc">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="time" layoutX="225.0" layoutY="157.0" mnemonicParsing="false" onAction="#UpdateExecutionTime" prefWidth="200.0" style="-fx-background-color: #b473ea;" text="Update Execution Time" textFill="#fcfcfc">
+            <font>
+                <Font name="David Bold" size="14.0" />
+            </font>
+        </Button>
+        <Button fx:id="back" layoutX="283.0" layoutY="254.0" mnemonicParsing="false" onAction="#homePage" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #b473ea;" text="Back" textFill="#faf6f6">
          <font>
             <Font name="David Bold" size="14.0" />
          </font></Button>
-      <Button fx:id="time" layoutX="225.0" layoutY="157.0" mnemonicParsing="false" onAction="#UpdateExecutionTime" prefWidth="200.0" style="-fx-background-color: #b473ea;" text="Update Execution Time" textFill="#fcfcfc">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font></Button>
-      <Button fx:id="back" layoutX="283.0" layoutY="254.0" mnemonicParsing="false" onAction="#homePage" prefHeight="38.0" prefWidth="84.0" style="-fx-background-color: #b473ea; -fx-background-image: save.png;" text="Back" textFill="#fcfcfc">
-         <font>
-            <Font name="David Bold" size="14.0" />
-         </font></Button>
-      <TextArea fx:id="text" layoutX="51.0" layoutY="114.0" prefHeight="212.0" prefWidth="114.0" text="Please&#10;select &#10;the&#10;information&#10;you&#10;want&#10; to &#10;update.">
-         <font>
-            <Font name="David Bold" size="16.0" />
-         </font>
-      </TextArea>
-      <ImageView fx:id="im" fitHeight="87.0" fitWidth="137.0" layoutX="425.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true" />
-   </children>
+
+        <TextArea fx:id="text" layoutX="51.0" layoutY="114.0" prefHeight="212.0" prefWidth="114.0" text="Please&#10;select &#10;the&#10;information&#10;you&#10;want&#10; to &#10;update.">
+            <font>
+                <Font name="David Bold" size="16.0" />
+            </font>
+        </TextArea>
+        <ImageView fx:id="im" fitHeight="87.0" fitWidth="137.0" layoutX="425.0" layoutY="283.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@pic/update.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
+            <graphic>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+                    <image>
+                        <Image url="@pic/siren.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </children>
 </AnchorPane>

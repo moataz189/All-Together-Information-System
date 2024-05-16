@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.PrimaryController">
+<AnchorPane cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.cshaifasweng.OCSFMediatorExample.client.PrimaryController">
    <children>
       <Button fx:id="Log_In_button" layoutX="278.0" layoutY="274.0" mnemonicParsing="false" onAction="#Log_In" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #7ad0ea;" text="Log In " textFill="WHITE">
          <font>
@@ -30,14 +30,19 @@
             <Font name="System Bold" size="12.0" />
          </font></TextField>
       <TextField fx:id="passwordlabel" layoutX="144.0" layoutY="223.0" prefHeight="26.0" prefWidth="80.0" style="-fx-background-color: without;" text="Password:" />
-      <ImageView fx:id="im" fitHeight="112.0" fitWidth="150.0" layoutX="34.0" layoutY="331.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="im" fitHeight="112.0" fitWidth="150.0" layoutX="58.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../../Pictures/im.png" />
+            <Image url="@pic/im.png" />
          </image>
       </ImageView>
       <Button fx:id="distressRequest" layoutX="322.0" layoutY="427.0" mnemonicParsing="false" onAction="#distressRequest" style="-fx-background-color: white;">
-
-
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+               <image>
+                  <Image url="@pic/siren.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
       <Label layoutX="253.0" layoutY="340.0" prefHeight="35.0" prefWidth="184.0" text="         Are you in emergency?" textAlignment="CENTER">
          <font>

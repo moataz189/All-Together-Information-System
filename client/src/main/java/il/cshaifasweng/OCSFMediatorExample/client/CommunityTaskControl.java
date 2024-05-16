@@ -4,24 +4,15 @@ import il.cshaifasweng.OCSFMediatorExample.entities.Task;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.image.Image;
-import javafx.scene.control.TextArea;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-
-import javafx.scene.control.ListView;
 
 //class for the community submitted requests.
 public class CommunityTaskControl {
@@ -48,23 +39,19 @@ public class CommunityTaskControl {
     @FXML
     private TextArea note;
 
-    public static List<Task> getCommunityTask = new ArrayList<>();
-    private Task requestedTask = null;
-    private InputStream stream;
+    @FXML
+    private Button DistressButtonControl;
 
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\statistics.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
     }
 
-    Image myImage1 = new Image(stream);
+    public static List<Task> getCommunityTask = new ArrayList<>();
+    private Task requestedTask = null;
 
     public void initialize() {
         note.setEditable(false);
-        im.setImage(myImage1);
         if (getCommunityTask.isEmpty()) {
             Platform.runLater(() -> {
                 showCompletionMessage("Empty", "There are no uploaded requests.");

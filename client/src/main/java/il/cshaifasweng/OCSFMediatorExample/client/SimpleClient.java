@@ -9,8 +9,11 @@ import org.greenrobot.eventbus.EventBus;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class SimpleClient extends AbstractClient {
 
@@ -22,6 +25,9 @@ public class SimpleClient extends AbstractClient {
 
     protected void handleMessageFromServer(Object msg) throws IOException {
         try {
+            if (msg == null)
+                return;
+
             if (msg.equals("back to list")) {
                 Platform.runLater(() -> {
                     try {
@@ -31,6 +37,25 @@ public class SimpleClient extends AbstractClient {
                     }
                 });
                 return;
+            }
+            else if (msg.equals("performedtaskisEmpty")) {
+                Platform.runLater(() -> {
+                    try {
+                        App.setRoot("performedTask");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
+            }
+
+            if ("The key id is false".equals(msg)) {
+                Platform.runLater(() -> {
+                    Alert alert = new Alert(Alert.AlertType.ERROR); // Use ERROR alert type
+                    alert.setTitle("Error"); // Set the window's title
+                    alert.setHeaderText(null); // Optional: you can have a header or set it to null
+                    alert.setContentText("Unidentified Code. Please try again."); // Set the main message/content
+                    alert.showAndWait(); // Display the alert and wait for the user to close it
+                });
             }
             if (msg.equals("notFound")) {
                 Platform.runLater(() -> {
@@ -142,9 +167,9 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }else if (messageParts[0].equals("myModify")) {
+                    } else if (messageParts[0].equals("myModify")) {
                         EventBus.getDefault().post((List<Task>) messageParts[1]);
-                    }else if (messageParts[0].equals("modTask")) {
+                    } else if (messageParts[0].equals("modTask")) {
                         EventBus.getDefault().post((List<Task>) messageParts[1]);
                     } else if (messageParts[0].equals("removeAcceptTaskManager")) {
                         EventBus.getDefault().post((ArrayList<Task>) messageParts[1]);
@@ -157,8 +182,7 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }
-                    else if (messageParts[0].equals("ToCancel")) {
+                    } else if (messageParts[0].equals("ToCancel")) {
                         CancelServiceRequest.getRequestService = (List<Task>) messageParts[1];
                         Platform.runLater(() -> {
                             try {
@@ -167,8 +191,7 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }
-                    else if (messageParts[0].equals("ToConfirm")) {
+                    } else if (messageParts[0].equals("ToConfirm")) {
                         confirmVol.getVolunteersWork = (List<Task>) messageParts[1];
                         Platform.runLater(() -> {
                             try {
@@ -177,12 +200,29 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }
-                    else if (messageParts[0].equals("uploaded")) {
+                    } else if (messageParts[0].equals("uploaded")) {
                         CommunityTaskControl.getCommunityTask = (List<Task>) messageParts[1];
                         Platform.runLater(() -> {
                             try {
                                 App.setRoot("CommunityTasks");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                    } else if (messageParts[0].equals("my community calls")) {
+                        CommunityDistress.getCommunitycalls = (List<DistressCall>) messageParts[1];
+                        Platform.runLater(() -> {
+                            try {
+                                App.setRoot("Community_distress");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                    } else if (messageParts[0].equals("all communities calls")) {
+                        AllCalls.getAllCommunitycalls = (List<DistressCall>) messageParts[1];
+                        Platform.runLater(() -> {
+                            try {
+                                App.setRoot("allCalls");
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
@@ -195,8 +235,9 @@ public class SimpleClient extends AbstractClient {
                             alert.setContentText("Your request has been canceled."); // Set the main message/content
                             alert.showAndWait(); // Display the alert and wait for the user to close it
                             EventBus.getDefault().post((List<Task>) messageParts[1]);
+                            System.out.println("CANCELED");
                         });
-                    }else if (messageParts[0].equals("confired!")) {
+                    } else if (messageParts[0].equals("confired!")) {
                         Platform.runLater(() -> {
                             Alert alert = new Alert(Alert.AlertType.INFORMATION); // Use INFORMATION alert type
                             alert.setTitle("Thank you"); // Set the window's title
@@ -206,7 +247,23 @@ public class SimpleClient extends AbstractClient {
                             EventBus.getDefault().post((List<Task>) messageParts[1]);
                         });
                     }
-                    else if (messageParts[0].equals("accept")) {
+                    if (messageParts[0].equals("histograms calls")) {
+                        List<DistressCall> distressCalls = (List<DistressCall>) messageParts[1];
+                        Map<LocalDate, Integer> dateCounts = new HashMap<>();
+                        // Count each date
+                        for (DistressCall call : distressCalls) {
+                            LocalDate date = call.getDate();
+                            dateCounts.put(date, dateCounts.getOrDefault(date, 0) + 1);
+                        }
+                        Histogram.dateCounts = dateCounts;
+                        Platform.runLater(() -> {
+                            try {
+                                App.setRoot("histogram");
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                    } else if (messageParts[0].equals("accept")) {
                         Platform.runLater(() -> {
                             EventBus.getDefault().post(messageParts[1]);
                         });
@@ -220,7 +277,7 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }else if (messageParts[0].equals("ManMessages")) {
+                    } else if (messageParts[0].equals("ManMessages")) {
                         //PerformedTaskControl.doneTasks = (List<MessageToManeger>) messageParts[1];
                         // MessagesToUser.users=(List<User>)messageParts[2];
                         Platform.runLater(() -> {
@@ -230,8 +287,7 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }
-                    else if (messageParts[0].equals("all users send")) {
+                    } else if (messageParts[0].equals("all users send")) {
                         MessagesToUser.users = (List<User>) messageParts[1];
                     }
                 }
@@ -255,9 +311,13 @@ public class SimpleClient extends AbstractClient {
                         alert.setContentText("Thanks for contacting us. \nThe request has been sent."); // Set the main message/content
                         alert.showAndWait(); // Display the alert and wait for the user to close it
                     });
-
-
-                    App.setRoot("primary");
+                    Platform.runLater(() -> {
+                        try {
+                            App.setRoot("primary");
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    });
 
                 }
                 if ("distresscall added successfully to the database.".equals(message)) {
@@ -269,15 +329,14 @@ public class SimpleClient extends AbstractClient {
                         alert.showAndWait(); // Display the alert and wait for the user to close it
                     });
                     Platform.runLater(() -> {
-
-
                         try {
-                            App.setRoot("secondary");
+                            if (Managercontrol.getManagerLogIn() == null)
+                                App.setRoot("secondary");
+                            else App.setRoot("manager_control");
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
                     });
-
                 }
                 if ("The key id is false".equals(message)) {
                     Platform.runLater(() -> {
@@ -287,8 +346,6 @@ public class SimpleClient extends AbstractClient {
                         alert.setContentText("Unidentified Code. Please try again."); // Set the main message/content
                         alert.showAndWait(); // Display the alert and wait for the user to close it
                     });
-
-
                 }
                 // Handling LOGIN_FAIL message
                 if ("LOGIN_FAIL".equals(message)) {
@@ -320,7 +377,7 @@ public class SimpleClient extends AbstractClient {
                             } catch (IOException e) {
                                 throw new RuntimeException(e);
                             }
-                        }  else if("Manager_LOGIN_SUCCESS".equals(message)){
+                        } else if ("Manager_LOGIN_SUCCESS".equals(message)) {
                             try {
                                 App.setRoot("manager_control");
                             } catch (IOException e) {
@@ -336,20 +393,23 @@ public class SimpleClient extends AbstractClient {
                 return;
             }
             if (msg.getClass().equals(Message.class)) {
-                System.out.println("In simple client");
                 if (((Message) msg).getMsg().equals("update manager check list")) {
                     EventBus.getDefault().post(((Message) msg).getObj());
                 } else if (((Message) msg).getMsg().equals("update uploaded tasks list"))
                     EventBus.getDefault().post(new ModifyTaskDetailEvent((Task) ((Message) msg).getObj()));
                 else if (((Message) msg).getMsg().equals("update volunteer")) {
                     EventBus.getDefault().post(new VolunteerEvent((Task) ((Message) msg).getObj()));
-                }else if (((Message) msg).getMsg().equals("acceptVolunteer")) {
+                } else if (((Message) msg).getMsg().equals("acceptVolunteer")) {
                     EventBus.getDefault().post(new accepTaskEvent((Task) ((Message) msg).getObj()));
-                }else if (((Message) msg).getMsg().equals("complete")) {
+                } else if (((Message) msg).getMsg().equals("complete")) {
                     EventBus.getDefault().post(new CompleteEvent((Task) ((Message) msg).getObj()));
+                } else if (((Message) msg).getMsg().equals("update uploaded tasks list"))
+                    EventBus.getDefault().post(new ModifyTaskDetailEvent((Task) ((Message) msg).getObj()));
+                else if (((Message) msg).getMsg().equals("update manager distress call list"))
+                    EventBus.getDefault().post(new AddCallEvent((DistressCall) ((Message) msg).getObj()));
+                else if (((Message) msg).getMsg().equals("update manager distress call histogram")) {
+                    EventBus.getDefault().post(new AddCallEvent((DistressCall) ((Message) msg).getObj()));
                 }
-
-
                 return;
             }
             if (msg.getClass().equals(Task.class)) {
@@ -370,9 +430,8 @@ public class SimpleClient extends AbstractClient {
                                 throw new RuntimeException(e);
                             }
                         });
-                    }
-                    else if (firstElement instanceof Task){
-                        PerformedTaskControl.doneTasks=(List<Task>) msg;
+                    } else if (firstElement instanceof Task) {
+                        PerformedTaskControl.doneTasks = (List<Task>) msg;
                         Platform.runLater(() -> {
                             try {
                                 App.setRoot("performedTask");

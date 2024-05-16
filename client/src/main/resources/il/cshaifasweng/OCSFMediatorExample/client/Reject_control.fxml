@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -28,6 +29,19 @@
                 <Font name="David Bold" size="16.0" />
             </font>
         </Label>
-      <ImageView fx:id="im" fitHeight="131.0" fitWidth="173.0" layoutX="74.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true" />
+        <ImageView fx:id="im" fitHeight="112.0" fitWidth="150.0" layoutX="93.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@pic/say-no.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="DistressButtonControl" layoutX="259.0" layoutY="446.0" mnemonicParsing="false" onAction="#distress" prefHeight="51.0" prefWidth="87.0" style="-fx-background-color: white;" textFill="WHITE" AnchorPane.bottomAnchor="28.399999999999977" AnchorPane.leftAnchor="259.0" AnchorPane.rightAnchor="254.60000000000002" AnchorPane.topAnchor="446.0">
+            <graphic>
+                <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="10.0">
+                    <image>
+                        <Image url="@pic/siren.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
     </children>
 </AnchorPane>

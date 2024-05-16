@@ -33,7 +33,7 @@ class TaskChecker implements Runnable {
                     String userid = task.getUser().getID();
                     int status = task.getStatus();
 
-                    String str = String.format("task for immediately volunteer: \nTask ID: %d\nTask Description: %s\nUser Name: %s\nUser ID: %s\nState: %d", id, serviceType, firstName, userid, status);
+                    String str = String.format("Task for immediately volunteer: \nTask ID: %d\nTask Description: %s\nUser Name: %s\nUser ID: %s\nState: %d", id, serviceType, firstName, userid, status);
 
 
                     Long sender = 0L;

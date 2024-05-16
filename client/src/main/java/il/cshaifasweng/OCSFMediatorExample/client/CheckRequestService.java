@@ -38,23 +38,18 @@ public class CheckRequestService {
     @FXML
     private Button refresh;
 
+    @FXML
+    private Button DistressButtonControl;
+
+    @FXML
+    void distress(ActionEvent event) throws IOException {
+        App.setRoot("distressCallsecondary");
+    }
     public static List<Task> requests = new ArrayList<>();
     private static Task requestedTask = null;
-    /*private InputStream stream;
-
-    {
-        try {
-            stream = new FileInputStream("C:\\Users\\IMOE001\\Pictures\\candidates.png");
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
-    //Image myImage1 = new Image(stream);
 
     public void initialize() {
         EventBus.getDefault().register(this);
-       // im.setImage(myImage1);
         if (requests.isEmpty()) {
             Platform.runLater(() -> {
                 showCompletionMessage("Empty", "There are no service requests.");
@@ -89,7 +84,6 @@ public class CheckRequestService {
         });
     }
 
-
     @Subscribe
     public void updateList(List<Task> listOfTasks) {
         Platform.runLater(() -> {
@@ -108,7 +102,7 @@ public class CheckRequestService {
                 return;
             }
             for (Task task : requests) {
-                this.communityTasks.getItems().add("Task id:" + task.getIdNum() + " - " + task.getServiceType());
+                this.communityTasks.getItems().addAll("Task id:" + task.getIdNum() + " - " + task.getServiceType());
             }
             this.communityTasks.setOnMouseClicked(event -> {
                 String selectedTaskName = this.communityTasks.getSelectionModel().getSelectedItem();
@@ -171,7 +165,7 @@ public class CheckRequestService {
         if (requestedTask != null) {
             int id = requestedTask.getIdNum();
             System.out.println(id);
-            String message = "Task is Accept@" + String.valueOf(id) + "@" + "0";
+            String message = "Task is Accept@" + (id);
             SimpleClient.getClient().sendToServer(message);
         }
         try {
@@ -233,12 +227,9 @@ public class CheckRequestService {
             // Retrieve date and time from the requestedTask object
             LocalDate date = requestedTask.getDate();
             LocalTime time = requestedTask.getTime();
-
-
             // Format date and time strings
             String formattedDate = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
             String formattedTime = time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-
             String x = String.format("Task ID: %d\nTask Description: %s\nUser Name: %s\nUser ID: %s\nStatus: %d\nDate: %s\nTime: %s\nNote: %s",
                     id, serviceType, fitst, userid, status, formattedDate, formattedTime, note);
             showAlert(x);
